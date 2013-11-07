@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>1997 Called. It wants it's subdomain back.</title>
+		<link rel="stylesheet" href="css/uikit.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<link rel="icon" type="image/x-icon" href="http://killthewww.com/favicon.ico"/>
+		
+	</head>
+	<body>
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=508634239161230";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+	    <header id="top">
+	        <div class="uk-container uk-container-center">
+				<div class="uk-grid">
+					<div class="uk-width-medium-6-10 logo">
+								<img src="images/killthewww-logo.png" alt="Kill the WWW" />
+					</div>
+					<div class="uk-width-medium-4-10 social">
+								<div class="fb-like" data-href="http://killthewww.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+							&nbsp;&nbsp;&nbsp;
+								<div class="g-plusone" data-size="small" data-href="http://killthewww.com"></div>
+								<script type="text/javascript">
+								  (function() {
+									var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+									po.src = 'https://apis.google.com/js/plusone.js';
+									var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+								  })();
+								</script>
+								<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fkillthewww.com&media=http%3A%2F%2Fkillthewww.com%2Fimages%2Fbrowser.png&description=Stop%20using%20WWW!%20Support%20the%20cause%20to%20end%20the%20use%20of%20the%20www.%20subdomain." data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+							&nbsp;&nbsp;&nbsp;
+								<a href="https://twitter.com/intent/tweet?button_hashtag=KillTheWWW&text=1997%20called.%20It%20wants%20it's%20subdomain%20back." class="twitter-hashtag-button" data-url="http://killthewww.com">#KillTheWWW</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>	
+					</div>
+				</div>
+            </div>
+	    </header>
+	    
+	    <section id="topcontent">
+	        	<div style="background: url('images/www-bg.jpg') 50% 0 no-repeat; background-size: cover; min-height: 340px;" class="uk-align-center tm-demo-image">
+                    <div class="uk-container uk-container-center">
+						<div class="uk-grid frontpage uk-vertical-align">
+						
+								<div class="uk-width-medium-1-3 uk-vertical-align-middle uk-animation-fade">
+									 <img src="images/browser.png" alt="Web Browser Icon" />
+								</div>
+			
+								<div class="uk-width-medium-2-3">
+					  
+								  <h1>Time to say goodbye</h1>
+								  <p>It&#39;s time we stopped kidding ourselves and put an old friend in a nice repo somewhere in the cloud.</p>
+								  <p>The <em>www.</em> subdomain has had a long standing place on the internet, but let's face it. We just don't need it anymore.</p>
+								  <p>The sooner everybody stops using <em>www.</em> in advertising, in person and on their websites, the sooner it will fade into memory as another "I remember when..." story the old geeks will tell at the company picnic.</p>
+								  <h2>Grand-dad's going to a home kids&#33;</h2>
+
+								</div>
+								
+						</div>
+                    </div>
+                </div>
+	            
+	            <article class="uk-container uk-container-center">
+	            	<div class="uk-grid">
+                        <div class="uk-width-medium-1-2">
+                            <h3 id="#getinvolved" class="uk-panel-title">What can I do?</h3>
+                            <p>As a developer, a designer or a website owner there are a few things you can do to help this initiative move forward.</p>
+                            <ul class="uk-list uk-list-space">
+                            	<li><i class="uk-icon-share"></i> Share with your friends and followers from <a href="#top" data-uk-smooth-scroll>the top</a> of this page.</li>
+                            	<li><i class="uk-icon-code"></i> You can manually add the 301 redirect to your .htaccess file.</li>
+                            	<li><i class="uk-icon-download"></i> You can download and use the provided .htaccess file.</li>
+                            	<li class="uk-text-muted"><i class="uk-icon-external-link"></i> Use one of our banners on your website. <em>coming soon</em></li>
+                            </ul>
+                        </div>
+                         <div class="uk-width-medium-1-2">
+                            <div class="uk-panel uk-panel-box">
+                                <h3 class="uk-panel-title">Add this to your .htaccess file</h3>
+                                    <blockquote>
+                                        <code>
+                                            RewriteEngine On<br>
+                                            RewriteBase /<br>
+                                            RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]<br>
+                                            RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+                                        </code>
+                                    </blockquote>
+                                    <h3 class="uk-panel-title uk-text-center">OR</h3>
+                                    <a href="http://15d673ebbc6fa5ad9924-008ad5c3e7da47a30bf26d6ef5cc6246.r18.cf1.rackcdn.com/htaccess.txt" target="_blank" class="uk-button uk-button-primary uk-button-large uk-button-expand uk-margin-top"><i class="uk-icon-chevron-down"></i> download .htaccess</a>
+                                    <div class="uk-text-center"><small>You must upload this file to your webserver and rename it to <em>.htaccess</em></small></div>
+                            </div>
+                        </div>    
+                    </div>
+	            </article>
+	            
+	    </section>
+	    <footer class="uk-grid footer">
+	    	<div class="uk-width-1-1 uk-text-center">
+	    		<small class="uk-text-muted">No kittens were hurt in the making of this website.</small>
+	    	</div>
+	    </footer>
+	    
+		<script type="text/javascript">
+		var clicky_site_ids = clicky_site_ids || [];
+		clicky_site_ids.push(100672637);
+		(function() {
+		  var s = document.createElement('script');
+		  s.type = 'text/javascript';
+		  s.async = true;
+		  s.src = '//static.getclicky.com/js';
+		  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+		})();
+		</script>
+		<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100672637ns.gif" /></p></noscript>
+	    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+	</body>
+</html>
