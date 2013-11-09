@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html id="top">
 	<head>
 		<title>1997 Called. It wants its subdomain back.</title>
 		<link rel="stylesheet" href="css/uikit.css" />
-		<script src="js/jquery.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<script src="js/uikit.js"></script>
 		<link rel="icon" type="image/x-icon" href="http://killthewww.com/favicon.ico"/>
 		<meta name="google-site-verification" content="JciSQHSAtB8wHdL0CBsJCiE5ToRX27cdZmJgx7v38iw" />	
@@ -18,7 +18,7 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 		
-	    <header id="top">
+	    <header>
 	        <div class="uk-container uk-container-center">
 				<div class="uk-grid">
 					<div class="uk-width-medium-6-10 logo">
@@ -170,7 +170,42 @@
 	    </section>
 	    
 	    <section id="bottom-content">
-	    	
+	    	<article class="uk-container uk-container-center">
+	            	<div class="uk-grid">
+                        <div class="uk-width-medium-1-1">
+							
+							<div data-uk-switcher="{connect:'#support'}" class="uk-button-group">
+								<button type="button" class="uk-button uk-active">180x150</button>
+								<button type="button" class="uk-button">120x90</button>
+								<button type="button" class="uk-button">120x60</button>
+							</div>
+							<ul class="uk-switcher uk-margin" id="support">
+								<li class="uk-active">
+									<div class="uk-grid">
+										<div class="uk-width-medium-1-4">
+											red
+										</div>
+										<div class="uk-width-medium-1-4">
+											orange
+										</div>
+										<div class="uk-width-medium-1-4">
+											blue
+										</div>
+										<div class="uk-width-medium-1-4">
+											green
+										</div>
+									</div>
+								</li>
+								<li class="">
+									120x90
+								</li>
+								<li class="">
+									120x60
+								</li>
+							</ul>		
+                        </div>
+                    </div>
+	            </article>
 	    </section>
 	    
 	    <footer class="uk-grid footer">
