@@ -1,11 +1,17 @@
 (function($) {
 
 $(document).ready(function(){
+	// reset elements
+	$('#working_animation').hide();
 	$('.goodtogo').hide();
+
 	$('#checka_form').on('submit',function(e){
+		e.preventDefault();
+		if(!$('#domain_input').val()){
+		return;
+		}
 		$('.goodtogo').hide();// cover the case of submitting multiple domains
 		$('#working_animation').show();// ID of the working animation to show.
-		e.preventDefault();
 		$.ajax({
 			type: "POST",
 			url: "check.php",
