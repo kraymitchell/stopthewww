@@ -6,11 +6,13 @@ if(isset($_POST['url'])){
 
 	$DomainChecker = new DomainChecker();
 	$DomainChecker->_set('url',$_POST['url'])->validate();
+
 	echo json_encode(array(
 			'state'=>$DomainChecker->domain_ok,
-			'dns_ok'=>$DomainChecker->dns_ok,
 			'page_up'=>$DomainChecker->page_up,
-			'domain'=>$DomainChecker->domain
+			'domain'=>$DomainChecker->domain,
+			'redirected'=>$DomainChecker->redirected,
+			'redirected_correctly'=>$DomainChecker->redirected_correctly
 		));
 die();
 }

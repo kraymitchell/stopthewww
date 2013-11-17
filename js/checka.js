@@ -19,11 +19,11 @@ $(document).ready(function(){
 			data: { url: $('#domain_input').val() }
 		}).done(function( response ) {
 			$('#working_animation').hide();// ID of the working animation to hide
-			if(response.dns_ok == true && response.page_up == true){
+			if(response.redirected == true && response.redirected_correctly == true){
 				$('.uk-text-success').slideDown(500);
-			} else if(response.dns_ok == true && response.page_up == false){
+			} else if(response.redirected == true && response.redirected_correctly == false){
 				$('.uk-text-warning').slideDown(500);
-			} else if(response.dns_ok == false && response.page_up == false){
+			} else if(response.redirected == false && response.redirected_correctly == false){
 				$('.uk-text-danger').slideDown(500);
 			}
 		});
