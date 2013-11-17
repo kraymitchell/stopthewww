@@ -1,11 +1,13 @@
 <?php
+phpinfo();
+
 
 if(isset($_POST['url'])){
 
 	include('DomainChecker.class.php');
 
 	$DomainChecker = new DomainChecker();
-	$DomainChecker->_set('url',$_POST['url'])->validate();
+	$DomainChecker->_set('url',$_POST['url'])->_set('debug',true)->validate();
 	echo json_encode(array(
 			'state'=>$DomainChecker->domain_ok,
 			'dns_ok'=>$DomainChecker->dns_ok,
