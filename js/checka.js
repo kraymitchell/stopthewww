@@ -19,12 +19,14 @@ $(document).ready(function(){
 			data: { url: $('#domain_input').val() }
 		}).done(function( response ) {
 			$('#working_animation').hide();// ID of the working animation to hide
-			if(response.redirected == true && response.redirected_correctly == true){
+			if(response.page_up == true && response.redirected_correctly == true){
 				$('.uk-text-success').slideDown(500);
-			} else if(response.redirected == true && response.redirected_correctly == false){
+			} else if(response.page_up == true && response.redirected_correctly == false){
 				$('.uk-text-warning').slideDown(500);
+			} else if(response.page_up == false && response.redirected_correctly == false){
+				$('#uk-text-danger-nores').slideDown(500);
 			} else if(response.redirected == false && response.redirected_correctly == false){
-				$('.uk-text-danger').slideDown(500);
+				$('#uk-text-danger-backwards').slideDown(500);
 			}
 		});
 	});

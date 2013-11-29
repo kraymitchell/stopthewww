@@ -139,11 +139,18 @@
 												<i class="uk-float-left uk-icon-exclamation xlarge"></i> <h3 class="uk-text-warning">No redirect in place.</h3>
 												<p>Both domain.com and www.domain.com are valid domains for you. Add a 301 redirect to fix this.</p>
 											</div>
-											<div class="goodtogo uk-float-left uk-text-danger">
+											<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-backwards">
 												<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
 												<p>You have a 301 redirect going from non-www to www. This is going backwards.</p>
 												<p>You can use the code provided above in your .htaccess, or download the provided file for your server.</p>
 											</div>
+											<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-nores">
+												<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
+												<p>You have no resolution on the primary domain at all!</p>
+												<p>You will need to reconfigure your DNS and then use the code provided above in your .htaccess, or download the provided file for your server.</p>
+											</div>
+
+
 										</div>
 									</div>	
                         	</div>

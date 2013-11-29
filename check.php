@@ -10,6 +10,7 @@ if(isset($_POST['url'])){
 	echo json_encode(array(
 			'state'=>$DomainChecker->domain_ok,
 			'page_up'=>$DomainChecker->page_up,
+			'www_up'=>$DomainChecker->www_up,
 			'domain'=>$DomainChecker->domain,
 			'redirected'=>$DomainChecker->redirected,
 			'redirected_correctly'=>$DomainChecker->redirected_correctly

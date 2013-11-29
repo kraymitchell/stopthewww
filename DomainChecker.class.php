@@ -7,6 +7,7 @@ class DomainChecker {
 	var $page_up = false;
 	var $redirected = false;
 	var $redirected_correctly = false;
+	var $www_up = false;
 
 	function _set($var,$val){
 		$this->$var = $val;
@@ -30,11 +31,10 @@ class DomainChecker {
 
 		$this->dns_ok = checkdnsrr($this->domain,"A");
 
-		if($this->dns_ok){
+		if($this->dns_ok){ // check if primary is up
 
 			$ch = curl_init();
-
-			curl_setopt($ch, CURLOPT_URL, "http://www.".$this->domain);
+			curl_setopt($ch, CURLOPT_URL, $this->domain);
 			curl_setopt($ch, CURLOPT_HEADER, true);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			$out = curl_exec($ch);
@@ -46,16 +46,29 @@ class DomainChecker {
 			}
 			$headers = explode("\n", $out);
 
-			foreach($headers as $header) {
-				if( substr($header, 0, 10) == "Location: " ) {
-					$target = substr($header, 10);
-					$this->redirected = true;
-					if($target == "http://".$this->domain."/"){
-						$this->redirected_correctly = true;
-					}
-				break;
-				}
-			}   
+			if( strpos($headers[0], '200') !== false){
+				$this->page_up = true;
+			}
+			curl_close($ch);
+		}
+		if($this->page_up){ // check if the www subdomain is up
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, "http://www.".$this->domain);
+			curl_setopt($ch, CURLOPT_HEADER, true);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$out = curl_exec($ch);
+
+			$out = str_replace("\r", "", $out);
+			$headers_end = strpos($out, "\n\n");
+			if( $headers_end !== false ) {
+				$this->www_up = true;
+				$out = substr($out, 0, $headers_end);
+			}
+			$headers = explode("\n", $out);
+			if( strpos($headers[0], '301') !== false){
+				$this->redirected_correctly = true;
+			}
+			curl_close($ch);
 		}
 
 	return $this;
