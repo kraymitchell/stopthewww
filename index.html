@@ -76,7 +76,7 @@
 	    </section>
 	    <section id="content">       
 	            <article class="uk-container uk-container-center">
-	            	<div class="uk-grid">
+	            	<div class="uk-grid" data-uk-grid-margin>
                         <div class="uk-width-medium-1-2">
                             <h3 id="#getinvolved" class="uk-panel-title">What can I do?</h3>
                             <p>As a developer, a designer or a website owner there are a few things you can do to help this initiative move forward.</p>
@@ -84,25 +84,74 @@
                             	<li><i class="uk-icon-share"></i> Share with your friends and followers from <a href="#top" data-uk-smooth-scroll>the top</a> of this page.</li>
                             	<li><i class="uk-icon-code"></i> You can manually add the 301 redirect to your .htaccess file.</li>
                             	<li><i class="uk-icon-download"></i> You can download and use the provided .htaccess file.</li>
+                            	<li><i class="uk-icon-code"></i> You can manually add the redirect to your Apache Config.</li>
+                            	<li><i class="uk-icon-download"></i> You can download, modify and use the provided Apache Config file.</li>
                             	<li><i class="uk-icon-link"></i> Set http://yourdomain.com as your <a href="https://support.google.com/webmasters/answer/44231?hl=en" target="_blank">preferred domain</a></li>
                             	<li><i class="uk-icon-picture"></i> Use <a href="#support" data-uk-smooth-scroll>one of our banners</a> on your website.</li>
                             </ul>
                         </div>
                          <div class="uk-width-medium-1-2">
-                            <div class="uk-panel uk-panel-box">
-                                <h3 class="uk-panel-title">For Linux Servers</h3>
-                                <p>Simply add this to your .htaccess file</p>
-                                    <blockquote>
-                                        <code>
-                                            RewriteEngine On<br>
-                                            RewriteBase /<br>
-                                            RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]<br>
-                                            RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-                                        </code>
-                                    </blockquote>
-                                    <h3 class="uk-panel-title uk-text-center">OR</h3>
-                                    <a href="http://15d673ebbc6fa5ad9924-008ad5c3e7da47a30bf26d6ef5cc6246.r18.cf1.rackcdn.com/htaccess.txt" target="_blank" class="uk-button uk-button-primary uk-button-large uk-button-expand"><i class="uk-icon-chevron-down"></i> download .htaccess</a>
-                                    <div class="uk-text-center"><small>You must upload this file to your webserver and rename it to <em>.htaccess</em></small></div>
+                            <div class="uk-panel">
+                            	<ul class="uk-tab" data-uk-tab="{connect:'#redirects'}">
+									<li class="uk-active"><a href="">For Linux</a></li>
+									<li><a href="">For Apache</a></li>
+									<li><a href="">For Windows</a></li>
+								</ul>
+								<ul id="redirects" class="uk-switcher uk-margin">
+									<li>
+										<h3 class="uk-panel-title">For Linux Servers</h3>
+										<p>Simply add this to your .htaccess file</p>
+										<blockquote>
+											<code>
+												RewriteEngine On<br>
+												RewriteBase /<br>
+												RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]<br>
+												RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+											</code>
+										</blockquote>
+										<h3 class="uk-panel-title uk-text-center">OR</h3>
+										<a href="https://0627fa24cdadac0fc008-008ad5c3e7da47a30bf26d6ef5cc6246.ssl.cf1.rackcdn.com/htaccess.txt" target="_blank" class="uk-button uk-button-primary uk-button-large uk-button-expand"><i class="uk-icon-chevron-down"></i> download .htaccess</a>
+										<div class="uk-text-center"><small>You must upload this file to your webserver and rename it to <em>.htaccess</em></small></div>
+									</li>
+									
+									<li>
+										<h3 class="uk-panel-title">For Apache</h3>
+										<p>Add or modify your Apache config to include the following.</p>
+										<blockquote>
+											<code>
+												&lt;VirtualHost *:80&gt;<br>
+													&nbsp;&nbsp;ServerAdmin admin@example.com<br>
+													&nbsp;&nbsp;ServerName example.com<br>
+													&nbsp;&nbsp;DocumentRoot /var/www/example.com/<br>
+													&lt;Directory /var/www/example.com/&gt;<br>
+														&nbsp;&nbsp;&nbsp;&nbsp;RewriteEngine On<br>
+														&nbsp;&nbsp;&nbsp;&nbsp;Options all<br>
+														&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride all<br>
+														&nbsp;&nbsp;&nbsp;&nbsp;Order allow,deny<br>
+														&nbsp;&nbsp;&nbsp;&nbsp;allow from all<br>
+													&lt;/Directory&gt;<br>
+																			
+													&nbsp;&nbsp;ErrorLog ${APACHE_LOG_DIR}/main.error.log<br>
+
+												&lt;/VirtualHost&gt;<br><br>
+												&lt;VirtualHost *:80&gt;<br>
+												&nbsp;&nbsp;ServerAlias example.com<br>
+												&nbsp;&nbsp;RedirectMatch permanent ^/(.*) http://www.example.com/$1<br>
+												&lt;/VirtualHost&gt;
+											</code>
+										</blockquote>
+										<h3 class="uk-panel-title uk-text-center">OR</h3>
+										<a href="https://0627fa24cdadac0fc008-008ad5c3e7da47a30bf26d6ef5cc6246.ssl.cf1.rackcdn.com/apache-config-default.zip" target="_blank" class="uk-button uk-button-primary uk-button-large uk-button-expand"><i class="uk-icon-chevron-down"></i> download apache config</a>
+										<div class="uk-text-center"><small>This file is <em>zipped</em>. If you are not familiar with Apache Config, you might want to avoid using this technique.</small></div>
+									</li>
+									
+									<li>
+										<h3 class="uk-panel-title">For Windows</h3>
+										<p>Instructions for Windows servers is coming soon.</p>
+									</li>
+								</ul>
+								
+								
                             </div>
                         </div>    
                     </div>
@@ -110,7 +159,7 @@
 	            
 	        <div style="background: #fafafa 0 no-repeat; background-size: cover; min-height: 340px;padding-bottom:2em;">    
 	            <article class="uk-container uk-container-center">
-	            	<div class="uk-grid uk-margin-top">
+	            	<div class="uk-grid uk-margin-top" data-uk-grid-margin>
 	            		<div class="uk-width-medium-1-2">
                             <div class="uk-panel uk-panel-box">
                                 <h3 class="uk-panel-title">Have you Said goodbye?</h3>
