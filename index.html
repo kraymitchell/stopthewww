@@ -116,7 +116,11 @@
 									
 									<li>
 										<h3 class="uk-panel-title">For Apache</h3>
-										<p>Add or modify your Apache config to include the following.</p>
+										<p>Make sure Apache VirtualHosts mod is enabled.</p>
+										<p><code># sudo a2enmod vhost_alias</code></p>
+										<p>Add or modify your Apache config</p>
+										<p><code># sudo vi /etc/apache2/sites-avaiable/default</code></p>
+										<p>and include the following</p>
 										<blockquote>
 											<code>
 												&lt;VirtualHost *:80&gt;<br>
