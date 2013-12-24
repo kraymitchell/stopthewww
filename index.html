@@ -41,10 +41,9 @@
 									var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 								  })();
 								</script>
-								<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fkillthewww.com%2F&media=http%3A%2F%2Fkillthewww.com%2Fimages%2Fbrowser.png&description=1997%20called.%20It%20wants%20it%26%23x27%3Bs%20subdomain%20back.%20It%26%23x27%3Bs%20time%20for%20the%20WWW%20to%20be%20dropped%20from%20our%20browsing%20habits." data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
-								&nbsp;&nbsp;&nbsp;
 								<a href="https://twitter.com/intent/tweet?button_hashtag=KillTheWWW&text=1997%20called.%20It%20wants%20its%20subdomain%20back." class="twitter-hashtag-button" data-url="http://killthewww.com">#KillTheWWW</a>
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>	
+																<a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fkillthewww.com%2F&media=http%3A%2F%2Fkillthewww.com%2Fimages%2Fbrowser.png&description=1997%20called.%20It%20wants%20it%26%23x27%3Bs%20subdomain%20back.%20It%26%23x27%3Bs%20time%20for%20the%20WWW%20to%20be%20dropped%20from%20our%20browsing%20habits." data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -82,6 +81,7 @@
                             <p>As a developer, a designer or a website owner there are a few things you can do to help this initiative move forward.</p>
                             <ul class="uk-list uk-list-space">
                             	<li><i class="uk-icon-share"></i> Share with your friends and followers from <a href="#top" data-uk-smooth-scroll>the top</a> of this page.</li>
+                            	<li><i class="uk-icon-arrow-down"></i> You can check your domain with our checker <a href="#checker" data-uk-smooth-scroll>below</a>.</li>
                             	<li><i class="uk-icon-code"></i> You can manually add the 301 redirect to your .htaccess file.</li>
                             	<li><i class="uk-icon-download"></i> You can download and use the provided .htaccess file.</li>
                             	<li><i class="uk-icon-code"></i> You can manually add the redirect to your Apache Config.</li>
@@ -151,7 +151,7 @@
 									
 									<li>
 										<h3 class="uk-panel-title">For Windows</h3>
-										<p>Instructions for Windows servers is coming soon.</p>
+										<p>Instructions for Windows servers coming soon.</p>
 									</li>
 								</ul>
 								
@@ -166,7 +166,7 @@
 	            	<div class="uk-grid uk-margin-top" data-uk-grid-margin>
 	            		<div class="uk-width-medium-1-2">
                             <div class="uk-panel uk-panel-box">
-                                <h3 class="uk-panel-title">Have you Said goodbye?</h3>
+                                <h3 class="uk-panel-title" id="checker">Have you Said goodbye?</h3>
                                 	
                                     <p>Check your domain to see if anything can be done to help you ditch the dubs.</p>
 										<form class="uk-form" id="checka_form">
@@ -175,7 +175,7 @@
 													<input class="uk-form-large uk-width-medium-1-1" type="text" placeholder="www.yourdomain.com" id="domain_input">
 												</div>
 												<div class="uk-width-medium-1-3">
-													<button class="uk-button uk-button-success uk-button-large uk-button-expand" type="submit">Check  It</button>
+													<button class="uk-button uk-button-success uk-button-large uk-button-expand" type="submit">Check It</button>
 												</div>
 											</div>
 										</form>	
@@ -190,8 +190,9 @@
 												<p>Please consider using one of our banners on your website to promote the cause.</p>
 											</div>
 											<div class="goodtogo uk-float-left uk-text-warning">
-												<i class="uk-float-left uk-icon-exclamation xlarge"></i> <h3 class="uk-text-warning">No redirect in place.</h3>
-												<p>Both domain.com and www.domain.com are valid domains for you. Google doesn't like when you do this. You can add a 301 redirect to remedy this.</p>
+												<i class="uk-float-left uk-icon-exclamation xlarge"></i> <h3 class="uk-text-warning">You're doing it wrong!</h3>
+												<p>No redirect in place. Both domain.com and www.domain.com are valid domains for you.</p>
+												<p>Google doesn't like when you do this. You can add a 301 redirect to remedy this.</p>
 											</div>
 											<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-backwards">
 												<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
@@ -201,6 +202,7 @@
 											<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-nores">
 												<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
 												<p>You have no resolution on the primary domain at all!</p>
+												<p>This means that even a 301 redirect won't work for you right now. You will need to reconfigure your DNS before adding the 301 redirect.</p>
 												<p>You will need to reconfigure your DNS and then use the code provided in your .htaccess, or download the provided file for your server.</p>
 											</div>
 
