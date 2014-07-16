@@ -152,7 +152,30 @@
 									
 									<li>
 										<h3 class="uk-panel-title">For Windows</h3>
-										<p>Instructions for Windows servers coming soon.</p>
+										<p>You need to edit your IIS web.config file with the below code.</p>
+										<p>Special thanks to <a href="http://quertytech.net" target="_blank">QWERTYtech.net</a> for the code.</p>
+										<blockquote>
+                                            <code>
+                                                &lt;configuration&gt;<br>
+                                                &nbsp;&nbsp;&lt;system.webServer&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;rewrite&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rules&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rule name="Remove WWW" stopProcessing="true"&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;match url=".*" /&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;conditions&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add input="{HTTP_HOST}" pattern="www.yourdomain.com$" /&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/conditions&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action type="Redirect" url="http://yourdomain.com/{R:0}" redirectType="Permanent" /&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/rule&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/rules&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/rewrite&gt;<br>
+                                                &nbsp;&nbsp;&lt;/system.webServer&gt;<br> 
+                                                &lt;/configuration&gt;
+                                            </code>
+										</blockquote>
+										<h3 class="uk-panel-title uk-text-center">OR</h3>
+										<a href="https://0627fa24cdadac0fc008-008ad5c3e7da47a30bf26d6ef5cc6246.ssl.cf1.rackcdn.com/web.config.zip" target="_blank" class="uk-button uk-button-primary uk-button-expand"><i class="uk-icon-chevron-down"></i> download IIS Web Config</a>
+										<div class="uk-text-center"><small>This file is <em>zipped</em>. If you are not familiar with IIS Web Config, you might want to avoid using this technique.</small></div>
 									</li>
 								</ul>
 								
