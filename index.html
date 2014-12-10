@@ -77,7 +77,69 @@
                     </div>
                 </div>
 	    </section>
-	    <section id="content">       
+
+	    <section id="checker">    
+            <div class="uk-container uk-container-center">
+            	<div class="uk-grid uk-margin-top" data-uk-grid-margin>
+            		<div class="uk-width-medium-1-2">
+                        <div class="uk-panel uk-panel-box">
+                            <h3 class="uk-panel-title">Have you Said goodbye?</h3>
+                            	
+                                <p>Check your domain to see if anything can be done to help you ditch the dubs.</p>
+									<form class="uk-form" id="checka_form">
+										<div class="uk-grid">
+											<div class="uk-width-medium-2-3">
+												<input class="uk-form uk-width-medium-1-1" type="text" placeholder="www.yourdomain.com" id="domain_input">
+											</div>
+											<div class="uk-width-medium-1-3">
+												<button class="uk-button uk-button-success uk-button-expand" type="submit">Check It</button>
+											</div>
+										</div>
+									</form>	
+								<div class="uk-grid">
+									<div class="uk-width-medium-1-1">
+										<div id="working_animation" class="uk-text-center uk-margin-top">
+											<i class="uk-text-center uk-icon-spinner xlarge uk-icon-spin"></i><h3>Checking domain</h3>
+										</div>
+										<div class="goodtogo uk-float-left uk-text-success">
+											<i class="uk-float-left uk-icon-check xlarge"></i> <h3 class="uk-text-success">You're good</h3>
+											<p>You already have a 301 redirect from www to non-www on your domain.</p>
+											<p>Please consider using one of our banners on your website to promote the cause.</p>
+										</div>
+										<div class="goodtogo uk-float-left uk-text-warning">
+											<i class="uk-float-left uk-icon-exclamation xlarge"></i> <h3 class="uk-text-warning">You're doing it wrong!</h3>
+											<p>No redirect in place. Both domain.com and www.domain.com are valid domains for you.</p>
+											<p>Google doesn't like when you do this. You can add a 301 redirect to remedy this.</p>
+										</div>
+										<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-backwards">
+											<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
+											<p>You have a 301 redirect going from non-www to www. This is going backwards.</p>
+											<p>You can use the code provided above in your .htaccess, or download the provided file for your server.</p>
+										</div>
+										<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-nores">
+											<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
+											<p>You have no resolution on the primary domain at all!</p>
+											<p>This means that even a 301 redirect won't work for you right now. You will need to reconfigure your DNS before adding the 301 redirect.</p>
+											<p>You will need to reconfigure your DNS and then use the code provided in your .htaccess, or download the provided file for your server.</p>
+										</div>
+
+
+									</div>
+								</div>	
+                    	</div>
+                	</div>
+                    <div class="uk-width-medium-1-2">
+                        <h3 class="uk-panel-title">Tell Me More.</h3>
+                        <p>You may not know it, but <code>www.domain.com</code> and <code>domain.com</code> are considered two separate URLs by search engines. Good SEO requires using only one of these options.</p>
+                        <p>Google calls this your preferred domain, or a canonical URL. Your canonical URL is essentially the 'best' option to use as the main domain.</p>
+                        <p>A 301 redirect will allow you to redirect all www. traffic to the non-www URL. You can then define this as your preferred URL in Google Webmaster Tools.</p>
+                       
+                    </div>   
+                </div>     
+            </div>   
+	    </section>
+
+	    <section id="content" class="uk-margin-top" style="background: #fafafa 0 no-repeat; padding-bottom:2em;">       
             <div class="uk-container uk-container-center">
             	<div class="uk-grid uk-margin-top" data-uk-grid-margin>
                     <div class="uk-width-medium-1-2">
@@ -85,7 +147,7 @@
                         <p>As a developer, a designer or a website owner there are a few things you can do to help this initiative move forward.</p>
                         <ul class="uk-list uk-list-space">
                         	<li><i class="uk-icon-share"></i> Share with your friends and followers from <a href="#top" data-uk-smooth-scroll>the top</a> of this page.</li>
-                        	<li><i class="uk-icon-arrow-down"></i> You can check your domain with our checker <a href="#checker" data-uk-smooth-scroll>below</a>.</li>
+                        	<li><i class="uk-icon-arrow-down"></i> You can check your domain with our checker <a href="#checker" data-uk-smooth-scroll>above</a>.</li>
                         	<li><i class="uk-icon-code"></i> You can manually add the 301 redirect via one of the methods here.</li>
                         	<li><i class="uk-icon-download"></i> You can download and use the provided .htaccess/Apache files.</li>
                         	<li><i class="uk-icon-link"></i> Set http://yourdomain.com as your <a href="https://support.google.com/webmasters/answer/44231?hl=en" target="_blank">preferred domain</a></li>
@@ -186,66 +248,9 @@
                 </div>
             </div>
 	   </section>
-	   <section id="checker" style="background: #fafafa 0 no-repeat; background-size: cover; padding-bottom:2em;">    
-            <div class="uk-container uk-container-center">
-            	<div class="uk-grid uk-margin-top" data-uk-grid-margin>
-            		<div class="uk-width-medium-1-2">
-                        <div class="uk-panel uk-panel-box">
-                            <h3 class="uk-panel-title">Have you Said goodbye?</h3>
-                            	
-                                <p>Check your domain to see if anything can be done to help you ditch the dubs.</p>
-									<form class="uk-form" id="checka_form">
-										<div class="uk-grid">
-											<div class="uk-width-medium-2-3">
-												<input class="uk-form uk-width-medium-1-1" type="text" placeholder="www.yourdomain.com" id="domain_input">
-											</div>
-											<div class="uk-width-medium-1-3">
-												<button class="uk-button uk-button-success uk-button-expand" type="submit">Check It</button>
-											</div>
-										</div>
-									</form>	
-								<div class="uk-grid">
-									<div class="uk-width-medium-1-1">
-										<div id="working_animation" class="uk-text-center uk-margin-top">
-											<i class="uk-text-center uk-icon-spinner xlarge uk-icon-spin"></i><h3>Checking domain</h3>
-										</div>
-										<div class="goodtogo uk-float-left uk-text-success">
-											<i class="uk-float-left uk-icon-check xlarge"></i> <h3 class="uk-text-success">You're good</h3>
-											<p>You already have a 301 redirect from www to non-www on your domain.</p>
-											<p>Please consider using one of our banners on your website to promote the cause.</p>
-										</div>
-										<div class="goodtogo uk-float-left uk-text-warning">
-											<i class="uk-float-left uk-icon-exclamation xlarge"></i> <h3 class="uk-text-warning">You're doing it wrong!</h3>
-											<p>No redirect in place. Both domain.com and www.domain.com are valid domains for you.</p>
-											<p>Google doesn't like when you do this. You can add a 301 redirect to remedy this.</p>
-										</div>
-										<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-backwards">
-											<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
-											<p>You have a 301 redirect going from non-www to www. This is going backwards.</p>
-											<p>You can use the code provided above in your .htaccess, or download the provided file for your server.</p>
-										</div>
-										<div class="goodtogo uk-float-left uk-text-danger" id="uk-text-danger-nores">
-											<i class="uk-float-left uk-icon-remove xlarge"></i> <h3 class="uk-text-danger">You're doing it wrong!</h3>
-											<p>You have no resolution on the primary domain at all!</p>
-											<p>This means that even a 301 redirect won't work for you right now. You will need to reconfigure your DNS before adding the 301 redirect.</p>
-											<p>You will need to reconfigure your DNS and then use the code provided in your .htaccess, or download the provided file for your server.</p>
-										</div>
 
+	   
 
-									</div>
-								</div>	
-                    	</div>
-                	</div>
-                    <div class="uk-width-medium-1-2">
-                        <h3 class="uk-panel-title">Tell Me More.</h3>
-                        <p>You may not know it, but <code>www.domain.com</code> and <code>domain.com</code> are considered two separate URLs by search engines. Good SEO requires using only one of these options.</p>
-                        <p>Google calls this your preferred domain, or a canonical URL. Your canonical URL is essentially the 'best' option to use as the main domain.</p>
-                        <p>A 301 redirect will allow you to redirect all www. traffic to the non-www URL. You can then define this as your preferred URL in Google Webmaster Tools.</p>
-                       
-                    </div>   
-                </div>     
-            </div>   
-	    </section>
 	    <section id="details">
 	    	<div class="uk-container uk-container-center">
             	<div class="uk-grid uk-margin-top" data-uk-grid-margin>
@@ -256,9 +261,9 @@
                         <ul class="uk-list">
                             <li class="uk-text-large uk-text-middle"><h2><span class="uk-text-warning">3+ billion</span> internet users*</h2></li>
                             <li class="uk-text-large uk-text-middle"><h2><span class="uk-text-warning">.5 seconds</span> to type WWW. once</h2></li>
-                            <li class="uk-text-large uk-text-middle"><h2><span class="uk-text-warning">47.5 years</span> wasted each day</h2></li>
+                            <li class="uk-text-large uk-text-middle"><h2><span class="uk-text-warning">47.5+ years</span> wasted each day</h2></li>
                         </ul>
-                        <small>*<a href="http://www.internetlivestats.com/watch/internet-users/" target="_blank">number of internet users</a></small>
+                        <small>*<a href="http://www.internetlivestats.com/watch/internet-users/" target="_blank">Per current number of internet users per InternetLiveStats.com</a></small>
                 	</div>
                 	<div class="uk-width-medium-1-2">
                         <h3  class="uk-panel-title">Who Says It Can't Be Done?</h3>
@@ -281,7 +286,8 @@
             	</div>
             </div>	
 	    </section>
-	    <section id="bottom-content">
+
+	    <section id="bottom-content" class="uk-margin-top" style="background: #fafafa 0 no-repeat;padding:10px 0;">
 	    	<article class="uk-container uk-container-center">
 	            	<div class="uk-grid">
 	            		<h2 id="support">Support the cause</h2>
